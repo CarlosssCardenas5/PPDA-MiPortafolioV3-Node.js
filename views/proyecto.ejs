@@ -1,0 +1,48 @@
+<%- include('partials/head') %>
+
+			<!-- Main -->
+			<div id="main">
+				<article class="post">
+					<header>
+						<div class="title">
+							<h2><%= proyecto.titulo %></h2>
+							<p><%= proyecto.subtitulo %></p>
+						</div>
+					</header>
+					<span class="image featured">
+						<img src="/images/<%= proyecto.imgDetalle %>" alt="<%= proyecto.titulo %>" />
+					</span>
+					<p><%= proyecto.intro %></p>
+
+					<h3>Descripción del proyecto</h3>
+					<p><%= proyecto.descripcion %></p>
+
+					<h3>Tecnologías utilizadas</h3>
+					<ul>
+						<% proyecto.tecnologias.forEach(function (t) { %>
+							<li><%= t %></li>
+						<% }); %>
+					</ul>
+
+					<h3><%= proyecto.listaTitulo %></h3>
+					<ul>
+						<% proyecto.lista.forEach(function (item) { %>
+							<li><%= item %></li>
+						<% }); %>
+					</ul>
+
+					<% if (proyecto.objetivo) { %>
+						<h3>Objetivo</h3>
+						<p><%= proyecto.objetivo %></p>
+					<% } %>
+
+					<ul class="actions">
+						<li><a href="/#proyectos" class="button">← Volver a proyectos</a></li>
+					</ul>
+				</article>
+			</div>
+
+			<!-- Footer -->
+			<%- include('partials/redes') %>
+
+<%- include('partials/scripts') %>
